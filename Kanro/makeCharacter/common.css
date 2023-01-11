@@ -1,0 +1,33 @@
+.kagakubukinsei_image{
+    width: 25%;
+}
+.title_kanronoame{
+    width: 30%;
+}
+.images{
+    text-align: center;
+}
+.attentiondiv{
+    border: 2px solid #FF7F27;
+    border-radius: 10px;
+    width: 70%;
+    text-align: center;
+    margin: auto;
+}
+#maindiv{
+    text-align: center;
+}
+#download-div{
+    border: 2px solid #FF7F27;
+    margin-left: 15%;
+    width: 50%;
+}
+#mainform{
+    margin-left: 15%;
+}
+.title{
+    font-size: 25px;
+}
+.subtitle{
+    font-size: 20px;
+}

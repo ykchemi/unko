@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="common.css">
+        <link rel="icon" type="image/png" href="favicon.png">
+    </head>
+    <body>
+        <img class="kagakubukinsei_image" src="KAGAKUBUKINSEI.png" alt="化学部謹製"><br>
+        <div class="images">
+            <img class="title_kanronoame" src="title.png" alt="甘露の雨(Kanro no ame)">
+        </div>
+        <div class="attentiondiv">
+            <p class="attention">始めての人は、マニュアルを参照してください。</p>
+            <a class="manuallink" href="manual.html">マニュアル</a>
+        </div>
+        <div id="maindiv"></div>
+        <form id="mainform" onsubmit="changeColor(canvasA.ctx); return false;">
+            <input type="text" value="" id="maininput" placeholder="color #を忘れずに"><br>
+            <input type="button" value="Export as csv" onclick="exportData(); return false;">
+        </form>
+        <div id="download-div">
+            <p>Download</p>
+        </div>
+        <script src="src/setting.js"></script>
+        <script src="src/draw.js"></script>
+        <script>
+            var canvasA = makeCanvas(MAIN_CANVAS_ID);
+            setGrid(canvasA.ctx);
+            Events(canvasA.canvas, canvasA.ctx);
+            makeArrayToRecord();
+        </script>
+        <p class="text">Copyright (C) Kagakubukinsei Twitter:@Kagakubukinsei</p>
+    </body>
+</html>

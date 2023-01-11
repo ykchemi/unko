@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head></head>
+    <body>
+        <canvas id="maincanvas" width="800" height="800"></canvas>
+        <script src="src/configure.js"></script>
+        <script src="src/main.js"></script>
+        <script>
+            const canvas = document.getElementById('maincanvas');
+            const ctx = canvas.getContext('2d');
+            drawHeadAtZeroPosition(ctx);
+            drawBodyAtZeroPosition(ctx);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,67 @@
+変数の宣言はconstまたはletですること。varは禁止。
+定数(config.jsで宣言されるもの)は全部大文字、アンダースコア区切り
+変数はなんでもいい。
+関数は最初の単語のみ全部小文字、それ以降は頭文字を大文字にして命名する。動詞+目的語が原則。
+
+構造
+
+index.html
+index.css
+src/
+    --config.js
+    --main.js
+    --map_config.js
+    --MrDebug.js
+
+
+main.js
+func makeCanvas(canvas_id)
+... IDにcanvas_idを持つcanvasを作り出す。
+  canvas_id 
+  ... 配置するcanvasのID。config.jsに書かれたものを使う想定。
+  
+  return: {canvas, ctx}
+  ... canvasは設置したものののDOM、ctxは使用するブラウザが対応していない場合undefinedになる。
+
+func makeMap()
+... 気が向いたら開発する
+
+func decodeFromRGB(arr)
+... 3種類(R, G, B)のデータをもとに、16進数のコードにしたarrを返す。
+  arr
+  ... 3種類の配列。[r, g, b] r, g, bは同じ位置に値がある必要がある。要素の型はnumberで。
+  
+  return: ReturnArray
+  ... 変換した一次元の配列。
+
+
+
+
+
+config.js
+
+MAIN_DIV_ID ... canvasを配置するdivのID。
+MAIN_CANVAS_ID ... ステージ、アバターの描画を行うcanvasのID。
+BACKGROUND_CANVAS_ID ... 背景の描画を行うcanvasのID。
+CANVAS_SIZE ... canvasのサイズを決める。連想配列を用いる。単位はpx
+MAP_SIZE ... マップのサイズを決める。連想配列を用いる。単位はpx
+BOX_SIZE ... 1つのドットのサイズ 単位はpx
+
+map_config.js
+
+MAP_DATA
+...MAPの中で、鍵のある場所、、、あとで開発しよう
+
+MrDebug.js
+...MrDebugの配列。
+STOPPING_MR_DEBUG_R~B ... 止まっているMrDebugの情報, RGB
+WARKING_MR_DEBUG_1~2_R~B ... 歩くMrDebugの情報, RGB
+DOT_SIZE ... 配列をどこで区切るかの情報。
+DATA_LENGTH ... 配列の長さ
+
+
+
+idnex.html
+
+スクリプトファイルを読み込む順番はconfig.js -> map_config.js -> MrDebug.js -> main.jsで。
+MAIN_DIV_IDのIDを持つ要素はスクリプトより上に配置する。
